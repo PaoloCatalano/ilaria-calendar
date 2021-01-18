@@ -45,17 +45,18 @@ const Hero = () => {
 
       <Heading
         textAlign="center"
-        size="large"
+        size={size === 'small' ? 'medium' : 'large'}
         a11yTitle="Application title"
         color="text"
       >
         {title}
       </Heading>
-      
+
       <Separator spacing="medium" />
 
       {subTitle && (
         <Heading
+          size={size === 'small' ? 'small' : 'medium'}
           textAlign="center"
           a11yTitle="Application sub title"
           color="text"
@@ -80,6 +81,11 @@ const Hero = () => {
           color="secondary"
           // target="_blank"
         />
+        {size === 'small' && <Separator spacing="large" />}
+        {size === 'small' && <Separator spacing="large" />}
+        {size === 'small' && <Separator spacing="large" />}
+        {size === 'small' && <Separator spacing="large" />}
+        {size === 'small' && <Separator spacing="large" />}
       </Box>
     </Box>
   );

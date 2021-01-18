@@ -45,11 +45,12 @@ const CalendarPage = () => {
     contentfulCalendarioUpdate,
   } = useStaticQuery(SPREADSHEET_QUERY);
 
-  const updated = contentfulCalendarioUpdate.updatedAt
+  let updated = contentfulCalendarioUpdate.updatedAt
     .slice(0, 16)
     .replace(/-/g, '/')
     .replace(/T/g, ' at ');
     
+
   const { limitMonthInTheFuture } = site.siteMetadata;
   
   const months = useMemo(
