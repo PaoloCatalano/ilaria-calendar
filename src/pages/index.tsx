@@ -30,7 +30,7 @@ const SPREADSHEET_QUERY = graphql`
     }
     contentfulCalendarioUpdate {
       scriviQui
-      createdAt
+      updatedAt
     }
   }
 `;
@@ -45,7 +45,7 @@ const CalendarPage = () => {
     contentfulCalendarioUpdate,
   } = useStaticQuery(SPREADSHEET_QUERY);
 
-  const updated = contentfulCalendarioUpdate.createdAt
+  const updated = contentfulCalendarioUpdate.updatedAt
     .slice(0, 16)
     .replace(/-/g, '/')
     .replace(/T/g, ' at ');
