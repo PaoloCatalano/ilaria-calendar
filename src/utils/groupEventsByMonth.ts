@@ -15,6 +15,7 @@ const removeOldAndFutureEvents = (
 ) => {
   const eventDate = parseEventDate(event.date);
 
+
   if (!isSameMonth(eventDate, today) && isBefore(eventDate, today))
     return false;
   if (differenceInMonths(eventDate, today) >= monthDiff) return false;

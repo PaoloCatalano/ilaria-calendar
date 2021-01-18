@@ -32,53 +32,24 @@ const Hero = () => {
       a11yTitle="Calendar events title"
       align="center"
       flex="grow"
-      height="80vh"
+      height="30vh"
       justify="center"
       pad="medium"
       animation="slideDown"
     >
-      <Box width="small" height="small">
-        <Image fit="contain" src={logoSrc} a11yTitle="logo" />
-      </Box>
-
-      <Separator />
-
-      <Heading
-        textAlign="center"
-        size="large"
-        a11yTitle="Application title"
-        color="text"
-      >
-        {title}
-      </Heading>
-      
-      <Separator spacing="medium" />
-
-      {subTitle && (
-        <Heading
-          textAlign="center"
-          a11yTitle="Application sub title"
-          color="text"
-        >
-          {subTitle}
-        </Heading>
-      )}
-
-      <Separator spacing="medium" />
-
       <Box direction={size === 'small' ? 'column' : 'row'} gap="large">
-        <HeroButton
-          href="#calendars"
-          label="Calendar | Calendario"
-          a11yTitle="Calendar | Calendario"
-          primary
-        />
         <HeroButton
           href={formLink}
           label="Book Now | Prenota Adesso"
           a11yTitle="Book Now | Prenota Adesso"
           color="secondary"
           // target="_blank"
+        />
+        <HeroButton
+          href="#calendars"
+          label="Top | Inizio Calendario"
+          a11yTitle="Calendar | Calendario"
+          primary
         />
       </Box>
     </Box>

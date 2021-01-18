@@ -15,7 +15,7 @@ const Day = ({ date, events, onClick }: Props) => {
   const today = new Date();
 
   const isToday = isSameDay(date, today);
-  const hasPast = isBefore(date, today) && !isToday;
+  const hasPast = (isBefore(date, today) && !isToday) ;
   const dayType = (isToday && 'today') || (hasPast && 'past') || 'day';
   const phoneViewport = size === 'small';
 
@@ -41,7 +41,7 @@ const Day = ({ date, events, onClick }: Props) => {
       </Box>
     </CalendarBox>
   );
-};
+};;
 
 type DayProps = { date: Date; type: string };
 

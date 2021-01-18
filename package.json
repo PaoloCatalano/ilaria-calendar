@@ -2,7 +2,7 @@
   "name": "gatsby-starter-event-calendar",
   "version": "1.0.0",
   "description": "A customizable calendar event starter for Gatsby integrated with Google Spreadsheet",
-  "author": "Ema Suriano <emanuel.suriano@gmail.com>",
+  "author": "Based on a project of Ema Suriano <emanuel.suriano@gmail.com>",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby clean && gatsby develop",
@@ -23,6 +23,7 @@
     "gatsby-plugin-sharp": "^2.9.0",
     "gatsby-plugin-styled-components": "^3.5.0",
     "gatsby-plugin-typescript": "^2.7.0",
+    "gatsby-source-contentful": "^4.4.1",
     "gatsby-source-filesystem": "^2.6.0",
     "gatsby-source-google-sheets": "^1.1.1",
     "gatsby-transformer-sharp": "^2.7.0",
@@ -32,6 +33,7 @@
     "react-dom": "^16.14.0",
     "react-github-corner": "^2.5.0",
     "react-helmet": "^6.1.0",
+    "react-icons": "^4.1.0",
     "styled-components": "^5.2.1",
     "uuid": "^8.3.1"
   },

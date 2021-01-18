@@ -9,7 +9,8 @@ type Props = ModalData & {
 
 const ModalEvent = ({ onClose, date, events }: Props) => (
   <Layer position="center" onClickOutside={onClose} onEsc={onClose} modal>
-    <Header onClick={onClose}>{format(date, 'cccc d, MMMM')}</Header>
+    {/* <Header onClick={onClose}>{format(date, 'cccc d, MMMM')}</Header> */}
+    <Header onClick={onClose}>{format(date, 'dd/MM/yyyy')}</Header>
     <Box direction="column" align="center" tag="section" margin="small">
       {events.map((event, i, arr) => (
         <Fragment key={event.id}>
@@ -65,7 +66,7 @@ const EventDescription = ({ event }: { event: EventInfo }) => (
     justify="center"
   >
     <Text a11yTitle="Event time" margin="small" color="calendar-modal-text">
-      {format(new Date(event.date).setUTCMinutes(180), 'HH:mm')}
+      {/* {format(new Date(event.date).setUTCMinutes(180), 'HH:mm')} */}
     </Text>
     <Box margin="small" width="medium">
       <Text
@@ -74,9 +75,9 @@ const EventDescription = ({ event }: { event: EventInfo }) => (
         size="large"
         color="calendar-modal-text"
       >
-        {event.eventName}
+        {event.eventName} | not available
       </Text>
-
+      {/* 
       {event.place && (
         <Text a11yTitle="Event place" color="calendar-modal-text">
           {event.place}
@@ -92,7 +93,7 @@ const EventDescription = ({ event }: { event: EventInfo }) => (
           target="_blank"
           primary
         />
-      </Box>
+      </Box> */}
     </Box>
   </Box>
 );
