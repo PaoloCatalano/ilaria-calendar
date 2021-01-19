@@ -38,7 +38,7 @@ const SPREADSHEET_QUERY = graphql`
 const CalendarPage = () => {
   const [showModal, setShowModal] = useState(false);
   const [modalData, setModalData] = useState<ModalData>();
-  
+
   const {
     allGoogleSheetEventsRow,
     site,
@@ -49,10 +49,16 @@ const CalendarPage = () => {
     .slice(0, 16)
     .replace(/-/g, '/')
     .replace(/T/g, ' at ');
-    
+
+  const newDate =
+   new Date(contentfulCalendarioUpdate.updatedAt).valueOf() * 1.000002234654571;//Ora Solare
+  //  new Date(contentfulCalendarioUpdate.updatedAt).valueOf()*1.000004469314136;//Ora legale (ZULU TIME)
+
+     updated = new Date(newDate).toString().slice(0, 21);
+
 
   const { limitMonthInTheFuture } = site.siteMetadata;
-  
+
   const months = useMemo(
     () =>
       groupEventsByMonth(allGoogleSheetEventsRow.nodes, limitMonthInTheFuture),
@@ -81,7 +87,8 @@ const CalendarPage = () => {
         <ModalEvent onClose={() => setShowModal(false)} {...modalData!} />
       )}
       <HeroFooter />
-      {contentfulCalendarioUpdate.scriviQui && `Last update: ${updated}`}
+      {contentfulCalendarioUpdate.scriviQui &&
+        `Last update: ${updated} (GMT+01:00) Rome`}
       <Footer />
     </Layout>
   );
